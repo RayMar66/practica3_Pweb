@@ -1,47 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rayniel Martínez Cuello</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Calculadora con Historial</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <div class="card profile">
-      <img src="fotito.jpeg" alt="Foto de Rayniel" class="profile-img" />
-      <h2>Rayniel Martínez Cuello</h2>
-      <p class="subtitle">Estudiante de Desarrollo de Software</p>
-    </div>
+  <div class="calculator">
+    <h2>Calculadora</h2>
+    <input type="number" id="num1" placeholder="Número 1">
+    <input type="number" id="num2" placeholder="Número 2">
 
-    <div class="card">
-      <h3>Información de Contacto</h3>
-      <p><strong>Teléfono:</strong> +1 (809) 123-4567</p>
-      <p><strong>Dirección:</strong> Santo Domingo Norte, República Dominicana</p>
-      <p><strong>Email:</strong> raynielmc@gmail.com</p>
-    </div>
+    <select id="operation">
+      <option value="add">Sumar</option>
+      <option value="subtract">Restar</option>
+      <option value="multiply">Multiplicar</option>
+      <option value="divide">Dividir</option>
+    </select>
 
-    <div class="card">
-      <h3>Mis Hobbies</h3>
-      <ul>
-        <li>Mirar videos</li>
-        <li>Jugar videojuegos</li>
-        <li>Programar</li>
-        <li>Ir al gimnasio</li>
-      </ul>
-    </div>
+    <button onclick="calculate()">Calcular</button>
 
-    <div class="card">
-      <h3>Mis Redes Sociales</h3>
-      <a href="https://www.youtube.com/@guinsoo594" target="_blank" class="social-btn">Mi canal de YouTube</a>
-    </div>
+    <div id="result">Resultado: </div>
 
-    <div class="card">
-      <h3>Mi Video Favorito de YouTube</h3>
-      <div class="video-container">
-        <iframe width="100%" height="315" src="https://www.youtube.com/embed/hfmVpn8iK-k" frameborder="0" allowfullscreen></iframe>
-      </div>
+    <div class="history">
+      <h3>Historial:</h3>
+      <ul id="historyList"></ul>
+      <button class="clear-history" onclick="clearHistory()">Limpiar Historial</button>
     </div>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
