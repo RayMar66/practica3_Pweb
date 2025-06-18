@@ -1,11 +1,10 @@
-const URL = 'http://www.raydelto.org/agenda.php';
+const URL = 'https://cors-anywhere.herokuapp.com/http://www.raydelto.org/agenda.php';
 
 function cargarContactos() {
-  fetch(URL, 
-        {
-              method: 'GET',
-              headers: { 'Content-Type': 'application/json' }
-        })
+  fetch(URL, {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' }
+  })
     .then(response => response.json())
     .then(data => {
       const lista = document.getElementById('listaContactos');
@@ -34,13 +33,13 @@ document.getElementById('formulario').addEventListener('submit', function(e) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ nombre, apellido, telefono })
   })
-  .then(() => {
-    document.getElementById('formulario').reset();
-    setTimeout(cargarContactos, 1000); 
-  })
-  .catch(error => {
-    console.error('Error al agregar contacto:', error);
-  });
+    .then(() => {
+      document.getElementById('formulario').reset();
+      setTimeout(cargarContactos, 1000);
+    })
+    .catch(error => {
+      console.error('Error al agregar contacto:', error);
+    });
 });
 
 cargarContactos();
