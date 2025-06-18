@@ -1,32 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Calculadora con Historial</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Agenda Web</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="calculator">
-    <h2>Calculadora</h2>
-    <input type="number" id="num1" placeholder="Número 1">
-    <input type="number" id="num2" placeholder="Número 2">
 
-    <select id="operation">
-      <option value="add">Sumar</option>
-      <option value="subtract">Restar</option>
-      <option value="multiply">Multiplicar</option>
-      <option value="divide">Dividir</option>
-    </select>
+  <h1>Agenda Web</h1>
 
-    <button onclick="calculate()">Calcular</button>
+  <form id="formulario">
+    <input type="text" id="nombre" placeholder="Nombre" required />
+    <input type="text" id="apellido" placeholder="Apellido" required />
+    <input type="text" id="telefono" placeholder="Teléfono" required />
+    <button type="submit">Agregar Contacto</button>
+  </form>
 
-    <div id="result">Resultado: </div>
-
-    <div class="history">
-      <h3>Historial:</h3>
-      <ul id="historyList"></ul>
-      <button class="clear-history" onclick="clearHistory()">Limpiar Historial</button>
-    </div>
+  <div id="contactos">
+    <h2>Contactos guardados</h2>
+    <div id="listaContactos"></div>
   </div>
 
   <script src="script.js"></script>
