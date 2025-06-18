@@ -1,7 +1,11 @@
 const URL = 'http://www.raydelto.org/agenda.php';
 
 function cargarContactos() {
-  fetch(URL)
+  fetch(URL, 
+        {
+              method: 'GET',
+              headers: { 'Content-Type': 'application/json' }
+        })
     .then(response => response.json())
     .then(data => {
       const lista = document.getElementById('listaContactos');
